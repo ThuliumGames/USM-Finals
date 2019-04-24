@@ -11,7 +11,7 @@ public class SwitchControl : MonoBehaviour {
 	public bool canReturn;
 	
 	void Update () {
-		if (SSInput.B[0] == "Pressed" && canLeave) {
+		if (SSInput.B[0] == "Pressed" && canLeave && GetComponent<PlaneControl>().enabled) {
 			GetComponent<PlaneControl>().enabled = false;
 			Person.SetActive (true);
 			Person.transform.position = transform.position - (transform.right*2);
