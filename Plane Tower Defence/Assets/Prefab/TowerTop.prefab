@@ -21,8 +21,9 @@ GameObject:
   - component: {fileID: 4911877936643250}
   - component: {fileID: 33934618014576166}
   - component: {fileID: 23410063504121604}
-  - component: {fileID: 54631788388390010}
-  - component: {fileID: 65582918116879424}
+  - component: {fileID: 54338926686116688}
+  - component: {fileID: 65725950356571420}
+  - component: {fileID: 114094018897156632}
   m_Layer: 0
   m_Name: TowerTop
   m_TagString: Untagged
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1519268029883164}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 12, z: -50}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,7 +87,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1519268029883164}
   m_Mesh: {fileID: 4300000, guid: 8add2a97868b1aa45914c8c53cc14ba5, type: 3}
---- !u!54 &54631788388390010
+--- !u!54 &54338926686116688
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,7 +102,7 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 122
   m_CollisionDetection: 2
---- !u!65 &65582918116879424
+--- !u!65 &65725950356571420
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,5 +112,18 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.75, y: 2.75, z: 1.5}
+  m_Size: {x: 2.375, y: 2.375, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0.75}
+--- !u!114 &114094018897156632
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1519268029883164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3519921421ee64aa65f2b2787e5825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTimed: 0
+  Health: 100
