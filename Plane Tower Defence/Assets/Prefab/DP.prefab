@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4377458721425328}
   - component: {fileID: 198144212624320732}
   - component: {fileID: 199921331274078398}
+  - component: {fileID: 114356126416191334}
   m_Layer: 0
   m_Name: DP
   m_TagString: Untagged
@@ -41,6 +42,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114356126416191334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1794444130926568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3519921421ee64aa65f2b2787e5825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTimed: 1
+  Health: 1
 --- !u!198 &198144212624320732
 ParticleSystem:
   m_ObjectHideFlags: 1
