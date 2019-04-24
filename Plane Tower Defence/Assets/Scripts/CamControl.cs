@@ -19,16 +19,22 @@ public class CamControl : MonoBehaviour {
 	
 	Vector3 Pre;
 	
+	public Stats S;
+	
+	void Start () {
+		S = GetComponentInParent<Stats>();
+	}
+	
 	void LateUpdate () {
 		
 		GameObject G = new GameObject();
 		G.transform.position = Vector3.Lerp (Pre, ObjToFollow.position, FollowSpeed*Time.deltaTime);
 		transform.position = G.transform.position;
 		transform.eulerAngles = new Vector3 (0, transform.eulerAngles.y, 0);
-		transform.Rotate (0, ((SSInput.RHor[0]*100))*Time.deltaTime, 0);
+		transform.Rotate (0, ((SSInput.RHor[S.Player]*100))*Time.deltaTime, 0);
 		transform.Translate (0, Up, -Back);
 		transform.eulerAngles = new Vector3 (0, transform.eulerAngles.y, 0);
-		UpDown += -SSInput.RVert[0]*100*Time.deltaTime;
+		UpDown += -SSInput.RVert[S.Player]*100*Time.deltaTime;
 		UpDown = Mathf.Clamp (UpDown, Min, Max);
 		transform.RotateAround (ObjToFollow.position+new Vector3 (0,1,0), transform.right, UpDown);
 		RaycastHit Hit;

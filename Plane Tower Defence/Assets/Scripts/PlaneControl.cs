@@ -15,6 +15,12 @@ public class PlaneControl : MonoBehaviour {
 	public GameObject DirtPart;
 	
 	public Transform WindPart;
+	
+	public Stats S;
+	
+	void Start () {
+		S = GetComponentInParent<Stats>();
+	}
 
 	void Update () {
 		
@@ -23,15 +29,15 @@ public class PlaneControl : MonoBehaviour {
 		coolDownVal = Mathf.Clamp (coolDownVal, 0, coolDown);
 		
 		//Move Up And Down By Changing Mass
-		if (SSInput.DUp[0] == "Down") {
+		if (SSInput.DUp[S.Player] == "Down") {
 			GetComponent<Rigidbody>().mass -= 10*Time.deltaTime;
 		}
-		if (SSInput.DDown[0] == "Down") {
+		if (SSInput.DDown[S.Player] == "Down") {
 			GetComponent<Rigidbody>().mass += 20*Time.deltaTime;
 		}
 		//Smooth Reset Mass
 		GetComponent<Rigidbody>().mass = Mathf.Clamp(GetComponent<Rigidbody>().mass, 10, 40);
-		GetComponent<Rigidbody>().mass = Mathf.Lerp (GetComponent<Rigidbody>().mass, 20.4f-Mathf.Abs(SSInput.LVert[0]*7), 1*Time.deltaTime);
+		GetComponent<Rigidbody>().mass = Mathf.Lerp (GetComponent<Rigidbody>().mass, 20.4f-Mathf.Abs(SSInput.LVert[S.Player]*7), 1*Time.deltaTime);
 		
 		if (GetComponent<SwitchControl>().canLeave) {
 			
@@ -55,7 +61,7 @@ public class PlaneControl : MonoBehaviour {
 		}
 		
 		//All Rotation
-		transform.localEulerAngles += new Vector3 (SSInput.LVert[0]*50*Time.deltaTime, SSInput.LHor[0]*100*Time.deltaTime, -SSInput.LHor[0]*50*Time.deltaTime);
+		transform.localEulerAngles += new Vector3 (SSInput.LVert[S.Player]*50*Time.deltaTime, SSInput.LHor[S.Player]*100*Time.deltaTime, -SSInput.LHor[S.Player]*50*Time.deltaTime);
 		
 		//Calculate Smooth Return
 		if (transform.localEulerAngles.x > 180) {
@@ -73,11 +79,11 @@ public class PlaneControl : MonoBehaviour {
 		GameObject G = new GameObject();
 		G.transform.position = transform.position;
 		G.transform.localEulerAngles = new Vector3 (0, transform.localEulerAngles.y, 0);
-		GetComponent<Rigidbody>().AddForce ((transform.up*10000*Time.deltaTime) + (G.transform.forward*SSInput.LVert[0]*1000*Time.deltaTime));
+		GetComponent<Rigidbody>().AddForce ((transform.up*10000*Time.deltaTime) + (G.transform.forward*SSInput.LVert[S.Player]*1000*Time.deltaTime));
 		Destroy(G);
 		
 		//Shoot
-		if (SSInput.X[0] == "Down" && coolDownVal <= 0) {
+		if (SSInput.X[S.Player] == "Down" && coolDownVal <= 0) {
 			GunSound.Play();
 			coolDownVal = coolDown;
 			Light.SetActive(true);
