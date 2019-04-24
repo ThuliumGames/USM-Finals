@@ -21,9 +21,12 @@ GameObject:
   - component: {fileID: 4802370498901404}
   - component: {fileID: 33952262278691346}
   - component: {fileID: 23109827340282982}
+  - component: {fileID: 64926759240842052}
+  - component: {fileID: 54920485317821756}
+  - component: {fileID: 114935066192241036}
   m_Layer: 0
   m_Name: TowerBase
-  m_TagString: Untagged
+  m_TagString: Tower Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,11 +39,11 @@ Transform:
   m_GameObject: {fileID: 1718833149728240}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &23109827340282982
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -83,3 +86,44 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1718833149728240}
   m_Mesh: {fileID: 4300000, guid: 6eb9a6a41d51d5940b670e9e415727cb, type: 3}
+--- !u!54 &54920485317821756
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1718833149728240}
+  serializedVersion: 2
+  m_Mass: 1000000
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 122
+  m_CollisionDetection: 2
+--- !u!64 &64926759240842052
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1718833149728240}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 6eb9a6a41d51d5940b670e9e415727cb, type: 3}
+--- !u!114 &114935066192241036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1718833149728240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f529b5f0aa5b2941ab161bfca9ab6f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 25

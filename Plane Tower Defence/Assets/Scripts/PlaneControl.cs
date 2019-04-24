@@ -84,6 +84,9 @@ public class PlaneControl : MonoBehaviour {
 			RaycastHit Hit;
 			if (Physics.Raycast(Light.transform.position, Light.transform.forward, out Hit, 100)) {
 				Instantiate (DirtPart, Hit.point, Quaternion.Euler (Hit.normal));
+				if (Hit.collider.gameObject.tag == "Tower Base") {
+					Hit.collider.gameObject.GetComponent<TowerHealth>().Health--;
+				}
 			}
 		} else if (coolDownVal <= coolDown/2) {
 			Light.SetActive(false);
