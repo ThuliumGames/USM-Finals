@@ -7839,7 +7839,9 @@ MonoBehaviour:
   floorppos: {x: 0, y: 0, z: 0}
   ptrans: {fileID: 0}
   dist: 0
-  Speed: 2
+  Speed: 3
+  shoottime: 5
+  bullet: {fileID: 3148227294124854877, guid: bbcb69bf2d6b19443ae0c4c1a7ee2104, type: 3}
 --- !u!54 &1412909036
 Rigidbody:
   m_ObjectHideFlags: 0

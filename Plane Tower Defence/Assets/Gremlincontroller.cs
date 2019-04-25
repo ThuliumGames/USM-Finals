@@ -9,7 +9,9 @@ public class Gremlincontroller : MonoBehaviour
     public Vector3 floorppos;
     public Transform ptrans;
     public float dist;
-    public float Speed;
+    public int Speed;
+    public float shoottime;
+    public GameObject bullet;
 
     // Start is called before the first frame update
     void Start()
@@ -18,19 +20,31 @@ public class Gremlincontroller : MonoBehaviour
         ppos = new Vector3(ptrans.position.x, ptrans.position.y, ptrans.position.z);
         floorppos = new Vector3(ptrans.position.x, this.transform.position.y, ptrans.position.z);
         epos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        dist = Vector3.SqrMagnitude(this.transform.position - ptrans.position);
+        dist = Vector3.SqrMagnitude(this.transform.position - floorppos);
+        shoottime = shoottime - Time.deltaTime;
 
         float step = Speed * Time.deltaTime;
         floorppos = new Vector3(ptrans.position.x, this.transform.position.y, ptrans.position.z);
 
-        if (dist >= 5)
+        if (dist >= 95)
         {
             transform.position = Vector3.MoveTowards(transform.position, floorppos, step);
         }
+
+        if (dist <= 800 && shoottime <= 0)
+        {
+            shoottime = 5;
+            Object.Instantiate(bullet, this.transform.position, this.transform.rotation);
+            BulletMovement myBullet = bullet.GetComponent<BulletMovement>();
+            myBullet.target = ppos;
+
+        }
     }
+
 }
