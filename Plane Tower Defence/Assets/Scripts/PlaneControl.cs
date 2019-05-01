@@ -91,7 +91,9 @@ public class PlaneControl : MonoBehaviour {
 			if (Physics.Raycast(Light.transform.position, Light.transform.forward, out Hit, 100)) {
 				Instantiate (DirtPart, Hit.point, Quaternion.Euler (Hit.normal));
 				if (Hit.collider.gameObject.tag == "Tower Base") {
-					--Hit.collider.gameObject.GetComponent<KillThings>().Health;
+					if (GetComponentInParent<Stats>().Player != Hit.collider.gameObject.GetComponent<KillThings>().TowerNumber) {
+						--Hit.collider.gameObject.GetComponent<KillThings>().Health;
+					}
 				}
 			}
 		} else if (coolDownVal <= coolDown/1.25f) {
