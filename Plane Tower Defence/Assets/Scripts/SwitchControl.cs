@@ -10,18 +10,20 @@ public class SwitchControl : MonoBehaviour {
 	public bool canLeave;
 	public bool canReturn;
 	
+	public CamControl  CC;
+	
 	void Update () {
-		if (SSInput.B[0] == "Pressed" && canLeave && GetComponent<PlaneControl>().enabled) {
+		if (SSInput.B[GetComponent<PlaneControl>().S.Player] == "Pressed" && canLeave && GetComponent<PlaneControl>().enabled) {
 			GetComponent<PlaneControl>().enabled = false;
 			Person.SetActive (true);
 			Person.transform.position = transform.position - (transform.right*2);
-			GameObject.FindObjectOfType<CamControl>().ObjToFollow = Person.transform;
+			CC.ObjToFollow = Person.transform;
 			Heli.isKinematic = true;
 			Person.GetComponent<Rigidbody>().isKinematic = false;
 		}
-		if (SSInput.A[0] == "Pressed" && canReturn) {
+		if (SSInput.A[GetComponent<PlaneControl>().S.Player] == "Pressed" && canReturn) {
 			GetComponent<PlaneControl>().enabled = true;
-			GameObject.FindObjectOfType<CamControl>().ObjToFollow = transform;
+			CC.ObjToFollow = transform;
 			Person.SetActive (false);
 			Person.GetComponent<Rigidbody>().isKinematic = true;
 			Heli.isKinematic = false;

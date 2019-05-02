@@ -37,7 +37,7 @@ public class PlaneControl : MonoBehaviour {
 		}
 		//Smooth Reset Mass
 		GetComponent<Rigidbody>().mass = Mathf.Clamp(GetComponent<Rigidbody>().mass, 10, 40);
-		GetComponent<Rigidbody>().mass = Mathf.Lerp (GetComponent<Rigidbody>().mass, 20.4f-Mathf.Abs(SSInput.LVert[S.Player]*7), 1*Time.deltaTime);
+		GetComponent<Rigidbody>().mass = Mathf.Lerp (GetComponent<Rigidbody>().mass, 20.4f-Mathf.Abs(SSInput.LVert[S.Player]*2), 1*Time.deltaTime);
 		
 		if (GetComponent<SwitchControl>().canLeave) {
 			
@@ -61,7 +61,7 @@ public class PlaneControl : MonoBehaviour {
 		}
 		
 		//All Rotation
-		transform.localEulerAngles += new Vector3 (SSInput.LVert[S.Player]*50*Time.deltaTime, SSInput.LHor[S.Player]*100*Time.deltaTime, -SSInput.LHor[S.Player]*50*Time.deltaTime);
+		transform.localEulerAngles += new Vector3 (SSInput.LVert[S.Player]*25*Time.deltaTime, SSInput.LHor[S.Player]*100*Time.deltaTime, -SSInput.LHor[S.Player]*25*Time.deltaTime);
 		
 		//Calculate Smooth Return
 		if (transform.localEulerAngles.x > 180) {
@@ -79,7 +79,7 @@ public class PlaneControl : MonoBehaviour {
 		GameObject G = new GameObject();
 		G.transform.position = transform.position;
 		G.transform.localEulerAngles = new Vector3 (0, transform.localEulerAngles.y, 0);
-		GetComponent<Rigidbody>().AddForce ((transform.up*10000*Time.deltaTime) + (G.transform.forward*SSInput.LVert[S.Player]*1000*Time.deltaTime));
+		GetComponent<Rigidbody>().AddForce ((transform.up*10000*Time.deltaTime) + (G.transform.forward*SSInput.LVert[S.Player]*10000*Time.deltaTime));
 		Destroy(G);
 		
 		//Shoot
@@ -92,6 +92,17 @@ public class PlaneControl : MonoBehaviour {
 				Instantiate (DirtPart, Hit.point, Quaternion.Euler (Hit.normal));
 				if (Hit.collider.gameObject.tag == "Tower Base") {
 					--Hit.collider.gameObject.GetComponent<KillThings>().Health;
+				}
+				if (Hit.collider.gameObject.GetComponentInParent<Stats>()) {
+					if (Hit.collider.gameObject.GetComponentInParent<Stats>().ScrapMetal > 0) {
+						--Hit.collider.gameObject.GetComponentInParent<Stats>().ScrapMetal;
+						Hit.collider.gameObject.GetComponentInParent<Stats>().drop = true;
+					}
+				}
+				if (Hit.collider.gameObject.GetComponentInParent<GiveMetal>()) {
+					if (Hit.collider.gameObject.GetComponentInParent<GiveMetal>().isMetal) {
+						Hit.collider.gameObject.GetComponentInParent<GiveMetal>().drop = true;
+					}
 				}
 			}
 		} else if (coolDownVal <= coolDown/1.25f) {

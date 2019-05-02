@@ -4380,6 +4380,7 @@ MonoBehaviour:
   Person: {fileID: 1301690262141562}
   canLeave: 0
   canReturn: 0
+  CC: {fileID: 114699272808455822}
 --- !u!114 &114079622342278424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4439,6 +4440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e03af8011248f4da9c71ffdfabe24d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cam: {fileID: 4897478388318968}
   S: {fileID: 0}
 --- !u!114 &114106928167105978
 MonoBehaviour:
