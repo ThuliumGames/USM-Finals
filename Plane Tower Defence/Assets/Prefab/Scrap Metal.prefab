@@ -229,9 +229,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da9d14c5e9dfe44f9ad8fc8b54b988f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMetal: 1
   St:
   - {fileID: 0}
   - {fileID: 0}
+  drop: 0
+  Metal: {fileID: 0}
 --- !u!135 &135795904941939858
 SphereCollider:
   m_ObjectHideFlags: 1

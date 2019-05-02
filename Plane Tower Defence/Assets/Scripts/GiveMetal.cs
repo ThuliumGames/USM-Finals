@@ -9,6 +9,8 @@ public class GiveMetal : MonoBehaviour {
 	public Stats[] St;
 	public bool drop;
 	
+	public GameObject Metal;
+	
 	void Start () {
 		if (isMetal) {
 			St = GameObject.FindObjectsOfType<Stats>();
@@ -28,10 +30,12 @@ public class GiveMetal : MonoBehaviour {
 	
 	void OnTriggerEnter (Collider Hit) {
 		if (Hit.GetComponentInParent<Stats>()) {
-			for (int i = 0; i < St.Length; i++) {
-				if (Hit.GetComponentInParent<Stats>() == St[i]) {
-					++St[i].ScrapMetal;
-					Destroy (gameObject);
+			if (Hit.name == "Test Human") {
+				for (int i = 0; i < St.Length; i++) {
+					if (Hit.GetComponentInParent<Stats>() == St[i]) {
+						++St[i].ScrapMetal;
+						Destroy (gameObject);
+					}
 				}
 			}
 		}

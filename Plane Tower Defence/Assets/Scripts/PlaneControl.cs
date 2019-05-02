@@ -100,7 +100,7 @@ public class PlaneControl : MonoBehaviour {
 					}
 				}
 				if (Hit.collider.gameObject.GetComponentInParent<GiveMetal>()) {
-					if (Hit.collider.gameObject.GetComponentInParent<GiveMetal>().isMetal) {
+					if (!Hit.collider.gameObject.GetComponentInParent<GiveMetal>().isMetal) {
 						Hit.collider.gameObject.GetComponentInParent<GiveMetal>().drop = true;
 					}
 				}

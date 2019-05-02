@@ -11797,6 +11797,66 @@ Prefab:
     - {fileID: 114929535099150462, guid: 799a0bd7f987ae5429f0540ce89d2297, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 799a0bd7f987ae5429f0540ce89d2297, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &736462913 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1402584037968006, guid: 799a0bd7f987ae5429f0540ce89d2297,
+    type: 2}
+  m_PrefabInternal: {fileID: 736462912}
+--- !u!1 &736462914 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1483812103464198, guid: 799a0bd7f987ae5429f0540ce89d2297,
+    type: 2}
+  m_PrefabInternal: {fileID: 736462912}
+--- !u!1 &736462915 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1666141215818916, guid: 799a0bd7f987ae5429f0540ce89d2297,
+    type: 2}
+  m_PrefabInternal: {fileID: 736462912}
+--- !u!114 &736462916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 736462913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da9d14c5e9dfe44f9ad8fc8b54b988f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMetal: 0
+  St: []
+  drop: 0
+  Metal: {fileID: 1204568310532792, guid: 53baae5fe5f6dae4aa93ca301544bea4, type: 2}
+--- !u!114 &736462917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 736462914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da9d14c5e9dfe44f9ad8fc8b54b988f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMetal: 0
+  St: []
+  drop: 0
+  Metal: {fileID: 1204568310532792, guid: 53baae5fe5f6dae4aa93ca301544bea4, type: 2}
+--- !u!114 &736462918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 736462915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da9d14c5e9dfe44f9ad8fc8b54b988f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMetal: 0
+  St: []
+  drop: 0
+  Metal: {fileID: 1204568310532792, guid: 53baae5fe5f6dae4aa93ca301544bea4, type: 2}
 --- !u!1 &743198312
 GameObject:
   m_ObjectHideFlags: 0
@@ -14113,6 +14173,66 @@ Prefab:
     - {fileID: 114929535099150462, guid: 799a0bd7f987ae5429f0540ce89d2297, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 799a0bd7f987ae5429f0540ce89d2297, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &942068236 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1402584037968006, guid: 799a0bd7f987ae5429f0540ce89d2297,
+    type: 2}
+  m_PrefabInternal: {fileID: 942068235}
+--- !u!1 &942068237 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1483812103464198, guid: 799a0bd7f987ae5429f0540ce89d2297,
+    type: 2}
+  m_PrefabInternal: {fileID: 942068235}
+--- !u!1 &942068238 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1666141215818916, guid: 799a0bd7f987ae5429f0540ce89d2297,
+    type: 2}
+  m_PrefabInternal: {fileID: 942068235}
+--- !u!114 &942068239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 942068236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da9d14c5e9dfe44f9ad8fc8b54b988f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMetal: 0
+  St: []
+  drop: 0
+  Metal: {fileID: 1204568310532792, guid: 53baae5fe5f6dae4aa93ca301544bea4, type: 2}
+--- !u!114 &942068240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 942068237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da9d14c5e9dfe44f9ad8fc8b54b988f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMetal: 0
+  St: []
+  drop: 0
+  Metal: {fileID: 1204568310532792, guid: 53baae5fe5f6dae4aa93ca301544bea4, type: 2}
+--- !u!114 &942068241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 942068238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da9d14c5e9dfe44f9ad8fc8b54b988f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMetal: 0
+  St: []
+  drop: 0
+  Metal: {fileID: 1204568310532792, guid: 53baae5fe5f6dae4aa93ca301544bea4, type: 2}
 --- !u!1 &948247106
 GameObject:
   m_ObjectHideFlags: 0
