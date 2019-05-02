@@ -17,8 +17,6 @@ public class Stats : MonoBehaviour {
 	public List <GameObject> Towers;
 	public Vector3 TowerPos;
 	GameObject NewTower;
-}
-	
 
 	void Update () {
 

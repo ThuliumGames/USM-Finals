@@ -1969,7 +1969,7 @@ Transform:
   m_LocalScale: {x: 100, y: 1, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &174871830
 GameObject:
@@ -2276,11 +2276,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: 0
   Ammo: 100
-  Segs: 0
+  TowerMoveTime: 0
   HeliHealth: 0
   ScrapMetal: 10
   Metal: {fileID: 1204568310532792, guid: 53baae5fe5f6dae4aa93ca301544bea4, type: 2}
   drop: 0
+  TowerTop: {fileID: 942068239}
+  TowerSegments: {fileID: 1718833149728240, guid: 74ccf9a72d8b4424f9db5611cc7b449d,
+    type: 2}
+  Towers:
+  - {fileID: 942068238}
+  - {fileID: 942068237}
+  - {fileID: 942068236}
+  - {fileID: 942068239}
+  TowerPos: {x: 0, y: 0, z: -50}
 --- !u!4 &208214988
 Transform:
   m_ObjectHideFlags: 0
@@ -2298,7 +2307,7 @@ Transform:
   - {fileID: 274768131}
   - {fileID: 62563461}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &213661166
 GameObject:
@@ -8062,7 +8071,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &313633897
 MonoBehaviour:
@@ -9291,7 +9300,7 @@ Transform:
   - {fileID: 1138865466}
   - {fileID: 871880647}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &449267395
 MonoBehaviour:
@@ -9307,11 +9316,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: 1
   Ammo: 100
-  Segs: 0
+  TowerMoveTime: 0
   HeliHealth: 0
   ScrapMetal: 10
   Metal: {fileID: 1204568310532792, guid: 53baae5fe5f6dae4aa93ca301544bea4, type: 2}
   drop: 0
+  TowerTop: {fileID: 736462919}
+  TowerSegments: {fileID: 1718833149728240, guid: 74ccf9a72d8b4424f9db5611cc7b449d,
+    type: 2}
+  Towers:
+  - {fileID: 736462915}
+  - {fileID: 736462914}
+  - {fileID: 736462913}
+  - {fileID: 736462919}
+  TowerPos: {x: 0, y: 0, z: 100}
 --- !u!1 &456069264
 GameObject:
   m_ObjectHideFlags: 0
@@ -11786,15 +11804,35 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4586506313294694, guid: 799a0bd7f987ae5429f0540ce89d2297, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1478925133681336, guid: 799a0bd7f987ae5429f0540ce89d2297, type: 2}
       propertyPath: m_Name
       value: Tower (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114601332483278824, guid: 799a0bd7f987ae5429f0540ce89d2297,
+        type: 2}
+      propertyPath: TowerNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114532188529461292, guid: 799a0bd7f987ae5429f0540ce89d2297,
+        type: 2}
+      propertyPath: TowerNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114495817444106716, guid: 799a0bd7f987ae5429f0540ce89d2297,
+        type: 2}
+      propertyPath: TowerNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114412629629349796, guid: 799a0bd7f987ae5429f0540ce89d2297,
+        type: 2}
+      propertyPath: TowerNumber
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 114012622723959636, guid: 799a0bd7f987ae5429f0540ce89d2297, type: 2}
-    - {fileID: 114929535099150462, guid: 799a0bd7f987ae5429f0540ce89d2297, type: 2}
+    - {fileID: 0}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 799a0bd7f987ae5429f0540ce89d2297, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &736462913 stripped
@@ -11857,6 +11895,11 @@ MonoBehaviour:
   St: []
   drop: 0
   Metal: {fileID: 1204568310532792, guid: 53baae5fe5f6dae4aa93ca301544bea4, type: 2}
+--- !u!1 &736462919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1866262878648774, guid: 799a0bd7f987ae5429f0540ce89d2297,
+    type: 2}
+  m_PrefabInternal: {fileID: 736462912}
 --- !u!1 &743198312
 GameObject:
   m_ObjectHideFlags: 0
@@ -14166,11 +14209,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4586506313294694, guid: 799a0bd7f987ae5429f0540ce89d2297, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114012622723959636, guid: 799a0bd7f987ae5429f0540ce89d2297, type: 2}
-    - {fileID: 114929535099150462, guid: 799a0bd7f987ae5429f0540ce89d2297, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 799a0bd7f987ae5429f0540ce89d2297, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &942068236 stripped
@@ -14188,51 +14229,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1666141215818916, guid: 799a0bd7f987ae5429f0540ce89d2297,
     type: 2}
   m_PrefabInternal: {fileID: 942068235}
---- !u!114 &942068239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 942068236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da9d14c5e9dfe44f9ad8fc8b54b988f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isMetal: 0
-  St: []
-  drop: 0
-  Metal: {fileID: 1204568310532792, guid: 53baae5fe5f6dae4aa93ca301544bea4, type: 2}
---- !u!114 &942068240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 942068237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da9d14c5e9dfe44f9ad8fc8b54b988f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isMetal: 0
-  St: []
-  drop: 0
-  Metal: {fileID: 1204568310532792, guid: 53baae5fe5f6dae4aa93ca301544bea4, type: 2}
---- !u!114 &942068241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 942068238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da9d14c5e9dfe44f9ad8fc8b54b988f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isMetal: 0
-  St: []
-  drop: 0
-  Metal: {fileID: 1204568310532792, guid: 53baae5fe5f6dae4aa93ca301544bea4, type: 2}
+--- !u!1 &942068239 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1866262878648774, guid: 799a0bd7f987ae5429f0540ce89d2297,
+    type: 2}
+  m_PrefabInternal: {fileID: 942068235}
 --- !u!1 &948247106
 GameObject:
   m_ObjectHideFlags: 0
@@ -14410,7 +14411,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963652806
 GameObject:
@@ -28515,7 +28516,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2021160182
 GameObject:
