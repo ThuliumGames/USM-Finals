@@ -16,7 +16,10 @@ public class PlaneControl : MonoBehaviour {
 	
 	public Transform WindPart;
 
-	void Update () {
+    public GameObject PauseCanvas;
+    [SerializeField] private SettingsPopup settingsPopup;
+
+    void Update () {
 		
 		//Gun Cool Down
 		coolDownVal -= Time.deltaTime;
@@ -88,5 +91,11 @@ public class PlaneControl : MonoBehaviour {
 		} else if (coolDownVal <= coolDown/2) {
 			Light.SetActive(false);
 		}
-	}
+
+        //Pause
+        if (SSInput.Strt[0] == "Down")
+        {
+            settingsPopup.Open();
+        }
+    }
 }

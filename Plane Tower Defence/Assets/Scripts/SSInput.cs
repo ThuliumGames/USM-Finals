@@ -125,9 +125,7 @@ public class SSInput : MonoBehaviour {
 						DLeft[i] = "Released";
 						return;
 					}
-				}
-				
-				
+				}				
 				
 				if (Strt[i] == "Up" || Strt[i] == "Released") {
 					if ("" + State.Buttons.Start == "Pressed") {
