@@ -32,7 +32,6 @@ public class Stats : MonoBehaviour {
 		}
 
 		foreach (GameObject G in Towers) {
-			//Vector3 TargetPos = G.transform.position + new Vector3(0, 4, 0);
 			Vector3 TargetPos = new Vector3 (G.transform.position.x, Towers.IndexOf(G) * 4, G.transform.position.z);
 			G.transform.position = TargetPos;
 		}

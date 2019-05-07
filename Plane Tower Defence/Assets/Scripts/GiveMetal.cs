@@ -8,6 +8,10 @@ public class GiveMetal : MonoBehaviour {
 	
 	public Stats[] St;
 	public bool drop;
+	public bool NaturalDrop;
+	public float NaturalDropTime;
+	public int StorageAmmount;
+	float time = 0;
 	
 	public GameObject Metal;
 	
@@ -19,6 +23,24 @@ public class GiveMetal : MonoBehaviour {
 	
 	void Update () {
 		if (!isMetal) {
+			if (NaturalDrop) {
+				int i = 0;
+				foreach (GiveMetal G in FindObjectsOfType<GiveMetal>()) {
+					if (G.isMetal && Vector3.Distance(transform.position, G.gameObject.transform.position) <= 100) {
+						i++;
+					}
+				}
+				if (i < StorageAmmount) {
+					time += Time.deltaTime;
+					if (time >= NaturalDropTime) {
+						time = 0;
+						drop = true;
+					}
+				} else {
+					time = 0;
+				}
+			}
+
 			if (drop) {
 				GameObject G = Instantiate (Metal, transform.position+(Vector3.up*10), Quaternion.Euler (Vector3.zero));
 				G.GetComponent<Rigidbody>().AddForce (Random.Range (-1000.0f, 1000.0f), Random.Range (500.0f, 1000.0f), Random.Range (-1000.0f, 1000.0f));

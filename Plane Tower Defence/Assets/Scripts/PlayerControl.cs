@@ -5,11 +5,15 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour {
 	
 	public Transform Cam;
+	public int PlayerHealth;
+	int MaxHealth;
+	public Vector3 SpawnPoint;
 	
 	public Stats S;
 	
 	void Start () {
 		S = GetComponentInParent<Stats>();
+		MaxHealth = PlayerHealth;
 	}
 	
 	void Update () {
@@ -20,6 +24,15 @@ public class PlayerControl : MonoBehaviour {
 			GetComponent<Animator>().SetBool("Moving", true);
 		} else {
 			GetComponent<Animator>().SetBool("Moving", false);
+		}
+	}
+
+	public void GetsHit() {
+		PlayerHealth--;
+		if (PlayerHealth <= 0) {
+			transform.position = SpawnPoint;
+			transform.LookAt(new Vector3(0, 0, 0), transform.up);
+			PlayerHealth = MaxHealth;
 		}
 	}
 }

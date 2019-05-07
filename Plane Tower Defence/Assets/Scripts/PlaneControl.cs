@@ -106,6 +106,9 @@ public class PlaneControl : MonoBehaviour {
 						Hit.collider.gameObject.GetComponentInParent<GiveMetal>().drop = true;
 					}
 				}
+				if (Hit.collider.gameObject.tag == "Human") {
+					Hit.collider.gameObject.GetComponent<PlayerControl>().GetsHit();
+				}
 			}
 		} else if (coolDownVal <= coolDown/1.25f) {
 			Light.SetActive(false);
