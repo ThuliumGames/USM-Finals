@@ -13,7 +13,9 @@ public class SwitchControl : MonoBehaviour {
 	public CamControl  CC;
 	
 	void Update () {
-		if (SSInput.B[GetComponent<PlaneControl>().S.Player] == "Pressed" && canLeave && GetComponent<PlaneControl>().enabled) {
+		bool NotDo = false;
+		if (SSInput.A[GetComponent<PlaneControl>().S.Player] == "Pressed" && canLeave && GetComponent<PlaneControl>().enabled) {
+			NotDo = true;
 			GetComponent<PlaneControl>().enabled = false;
 			Person.SetActive (true);
 			Person.transform.position = transform.position - (transform.right*2);
@@ -21,12 +23,14 @@ public class SwitchControl : MonoBehaviour {
 			Heli.isKinematic = true;
 			Person.GetComponent<Rigidbody>().isKinematic = false;
 		}
-		if (SSInput.A[GetComponent<PlaneControl>().S.Player] == "Pressed" && canReturn) {
-			GetComponent<PlaneControl>().enabled = true;
-			CC.ObjToFollow = transform;
-			Person.SetActive (false);
-			Person.GetComponent<Rigidbody>().isKinematic = true;
-			Heli.isKinematic = false;
+		if (!NotDo) {
+			if (SSInput.A[GetComponent<PlaneControl>().S.Player] == "Pressed" && canReturn) {
+				GetComponent<PlaneControl>().enabled = true;
+				CC.ObjToFollow = transform;
+				Person.SetActive (false);
+				Person.GetComponent<Rigidbody>().isKinematic = true;
+				Heli.isKinematic = false;
+			}
 		}
 	}
 }

@@ -20,7 +20,7 @@ public class GiveMetal : MonoBehaviour {
 	void Update () {
 		if (!isMetal) {
 			if (drop) {
-				GameObject G = Instantiate (Metal, transform.position+(Vector3.up*10), Quaternion.Euler (Vector3.zero));
+				GameObject G = Instantiate (Metal, new Vector3 (transform.position.x, 0, transform.position.z)+(Vector3.up*4*GetComponentInParent<Rigidbody>().GetComponentsInChildren<Transform>().Length), Quaternion.Euler (Vector3.zero));
 				G.GetComponent<Rigidbody>().AddForce (Random.Range (-1000.0f, 1000.0f), Random.Range (500.0f, 1000.0f), Random.Range (-1000.0f, 1000.0f));
 				G.GetComponent<Rigidbody>().AddTorque (Random.Range (-1000.0f, 1000.0f), Random.Range (-1000.0f, 1000.0f), Random.Range (-1000.0f, 1000.0f));
 				drop = false;
