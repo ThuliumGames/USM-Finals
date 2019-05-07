@@ -18,6 +18,8 @@ public class PlaneControl : MonoBehaviour {
 	
 	public Stats S;
 	
+	public LayerMask LM;
+	
 	void Start () {
 		S = GetComponentInParent<Stats>();
 	}
@@ -83,16 +85,22 @@ public class PlaneControl : MonoBehaviour {
 		Destroy(G);
 		
 		//Shoot
-		if (SSInput.X[S.Player] == "Down" && coolDownVal <= 0) {
+		if (SSInput.X[S.Player] == "Down" && coolDownVal <= 0 && GetComponentInParent<Stats>().Ammo > 0) {
+			GetComponentInParent<Stats>().Ammo--;
 			GunSound.Play();
 			coolDownVal = coolDown;
 			Light.SetActive(true);
 			RaycastHit Hit;
-			if (Physics.Raycast(Light.transform.position, Light.transform.forward, out Hit, 100)) {
+			if (Physics.Raycast(Light.transform.position, Light.transform.forward, out Hit, 100, LM)) {
 				Instantiate (DirtPart, Hit.point, Quaternion.Euler (Hit.normal));
 				if (Hit.collider.gameObject.tag == "Tower Base") {
 					if (GetComponentInParent<Stats>().Player != Hit.collider.gameObject.GetComponent<KillThings>().TowerNumber) {
 						--Hit.collider.gameObject.GetComponent<KillThings>().Health;
+						if (Hit.collider.gameObject.GetComponentInParent<GiveMetal>()) {
+						if (!Hit.collider.gameObject.GetComponentInParent<GiveMetal>().isMetal) {
+							Hit.collider.gameObject.GetComponentInParent<GiveMetal>().drop = true;
+						}
+				}
 					}
 				}
 				if (Hit.collider.gameObject.GetComponentInParent<Stats>()) {
