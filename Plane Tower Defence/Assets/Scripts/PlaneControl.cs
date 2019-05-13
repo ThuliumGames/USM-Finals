@@ -95,12 +95,12 @@ public class PlaneControl : MonoBehaviour {
 				Instantiate (DirtPart, Hit.point, Quaternion.Euler (Hit.normal));
 				if (Hit.collider.gameObject.tag == "Tower Base") {
 					if (GetComponentInParent<Stats>().Player != Hit.collider.gameObject.GetComponent<KillThings>().TowerNumber) {
-						--Hit.collider.gameObject.GetComponent<KillThings>().Health;
+						Hit.collider.gameObject.GetComponent<KillThings>().Health--;
 						if (Hit.collider.gameObject.GetComponentInParent<GiveMetal>()) {
-						if (!Hit.collider.gameObject.GetComponentInParent<GiveMetal>().isMetal) {
-							Hit.collider.gameObject.GetComponentInParent<GiveMetal>().drop = true;
+							if (!Hit.collider.gameObject.GetComponentInParent<GiveMetal>().isMetal) {
+								Hit.collider.gameObject.GetComponentInParent<GiveMetal>().drop = true;
+							}
 						}
-				}
 					}
 				}
 				if (Hit.collider.gameObject.GetComponentInParent<Stats>()) {
@@ -109,11 +109,7 @@ public class PlaneControl : MonoBehaviour {
 						Hit.collider.gameObject.GetComponentInParent<Stats>().drop = true;
 					}
 				}
-				if (Hit.collider.gameObject.GetComponentInParent<GiveMetal>()) {
-					if (!Hit.collider.gameObject.GetComponentInParent<GiveMetal>().isMetal) {
-						Hit.collider.gameObject.GetComponentInParent<GiveMetal>().drop = true;
-					}
-				}
+				
 				if (Hit.collider.gameObject.tag == "Human") {
 					Hit.collider.gameObject.GetComponent<PlayerControl>().GetsHit();
 				}
